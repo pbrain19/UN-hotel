@@ -1,0 +1,25 @@
+ 
+<div class="modal-body newsmodal">
+
+    <div class="metroHeader">
+        News
+    </div>
+    <h2>{{articles.title}}</h2>   
+    <p>{{articles.content| cleanContent }}</p>
+
+
+    <p>{{articles.publishedDate}}</p>
+    <hr>
+    <p>Continue reading,<br>
+        with your mobile phone</p>
+    <p>Enter your email</p>
+    <input id="usermail" ng-model="clientEmail" />
+    <button ng-show='clientEmail' ng-hide="emailSent" ng-click="sendTheMail(articles.link)" class="btn btn-large btn-success" >Send Email</button>
+    <p ng-show='emailSent' class='emailConfirm'>Check your Email</p>
+
+    <p>OR</p>
+
+    <iframe sandbox="allow-forms allow-scripts"
+            ng-src="http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl={{articles.link}}" >
+    </iframe>
+</div>

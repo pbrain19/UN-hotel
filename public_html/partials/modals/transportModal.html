@@ -1,0 +1,24 @@
+
+<div class="modal-body transportModal">
+    <div class="transMetroHeaderDynamic">Directions</div>
+        <div class="transport">
+            
+                    <p>Take your directions to go, with your mobile phone</p>
+                    <p>Enter your email</p>
+                    <div class="transportInnards">
+                        <input ng-show='!mailSent' type="text" id='userEmail' placeholder="email@example.com" ng-model='userEmail'>
+                        <br>
+                        <button ng-show='userEmail' ng-hide='mailSent' ng-click="sendTheMail()" class="btn btn-large btn-success" >Send Email</button>
+                        <p ng-show='mailSent' class='emailConfirm'>Check your Email</p>
+
+
+                        <h3>Or</h3>
+
+
+                        <iframe sandbox="allow-forms allow-scripts"
+                            ng-src="http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl={{qrcode}}" >
+                        </iframe>
+                        </div>
+                    <p>Scan the QR Code</p>
+         </div>
+</div>

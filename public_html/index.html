@@ -1,0 +1,69 @@
+ 
+<!DOCTYPE html>
+<html lang="en" data-ng-app="AppleHotel" >
+    <head> 
+        <title>Hotel Demo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="css/app.css">  
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/angular-carousel.min.css">
+        <link rel="stylesheet" href="css/tempcss.css"> 
+
+        <link rel="stylesheet" href="css/jsKeyboard.css" type="text/css" media="screen"/>
+         
+    </head>
+    <body> 
+        <div id="mainWrap" class="container-fluid" ng-controller="backMechanism">
+            <iframe src="http://metroclick.us/ads/unhotel/index.html" id="frontPage" ng-show="showback"></iframe>
+            <a href="#/activities"><img src="img/icons/activities.png" id="activities" class="metronav"></a>
+            <a href="#/dining"><img src="img/icons/dining.png" id="dining" class="metronav"></a>
+            <a href="#/flights"><img src="img/icons/flights.png" id="flights" class="metronav"></a>
+            <a href="#/news"> <img src="img/icons/news.png" id="news" class="metronav"></a>
+            <a href="#/transportation"> <img src="img/icons/transportation.png" id="transportation" class="metronav"></a>
+            <a href="#/weather"> <img src="img/icons/weather.png" id="weather" class="metronav"></a>
+            <a href="#/weather"> <img src="img/icons/pwrby_metroclick.png" id="metroLogo" class="metronav"></a>
+
+            <div id="views" ng-view ng-animate="{enter:'animated fadeInRightBig', leave:''}"></div>
+
+        </div>
+
+        <!-- scripts to load after page does. Performance enhancer -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="plugins/date.js"></script>
+          
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="plugins/jquery.zweatherfeed.min.js"></script>
+
+        <script type="text/javascript" src="js/angular-resource.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/ang/app.js"></script>
+        <script type="text/javascript" src="js/ang/controllers.js"></script>
+        <script type="text/javascript" src="js/ang/directives.js"></script>
+        <script type="text/javascript" src="js/ang/filters.js"></script>
+        <script type="text/javascript" src="js/ang/services.js"></script>
+        <script type="text/javascript" src="plugins/xml2json.js"></script>
+        <script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqLx4skhsKnyzazGRCShKgYcmnqmmppGE&sensor=true&libraries=places">
+        </script> 
+        <script type="text/javascript" src="plugins/gmap3.min.js"></script>    
+
+        <script src="plugins/idle-timer.min.js"></script>
+        <script type="text/javascript" src="js/mandrill.js"></script>
+
+        <script type="text/javascript" src="js/ui-bootstrap-tpls-0.7.0.min.js"></script>
+        <script type="text/javascript" src="js/angular-mobile.js"></script>
+        <script type="text/javascript" src="js/angular-carousel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.idle.js"></script>
+
+        <script type="text/javascript" src="js/jsKeyboard.js"></script>
+        <script type="text/javascript" src="js/angularLocalStorage.js"></script> 
+        <script type="text/javascript" src="js/angular-cookies.min.js"></script> 
+        <script type="text/javascript" src="js/analytics.js"></script>  
+    </body>
+
+
+</html>

@@ -1,0 +1,82 @@
+<div class="container-fluid" ng-controller="flightsCTRL">
+    <div class="row-fluid">
+        <div class="span12">
+
+            <div class="metroHeader">
+                Flights
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="flightsMarketing" class="marketing">
+            </div>
+            <hr class="separator">
+            <div class="flightControl">
+                <div class="metroFilters"  ng-model="flightControl" btn-radio="'arriving'">Arrivals</div>
+                <div class="metroFilters"  ng-model="flightControl" btn-radio="'departing'">Departing</div>
+                <input placeholder="Search For Flight..." id="flightsearch" ng-model="Flightfilter">
+
+
+            </div>
+
+            <img class = "keyboardClose" id="flightClose" src ="img/CloseKeyboard.png" alt="">
+            <div id="virtualKeyboard"></div>
+
+            <div  ng-switch on="flightControl" class="flightinfo">
+                <div ng-switch-when="arriving">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Flight Numbers</th>
+                                <th>Origin</th>
+                                <th>Arrival Time</th>
+                                <th>Origin Departure Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="flights in arriving | filter:Flightfilter">
+                                <td>{{flights.ident}}</td>
+                                <td>{{flights.originCity}}</td>
+                                <td>{{flights.estimatedarrivaltime * 1000| date:'short'}}</td>
+                                <td>{{flights.filed_departuretime * 1000| date:'short'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div ng-switch-when="departing">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Flight Numbers</th>
+                                <th>Origin</th>
+                                <th>Departing Time</th>
+                                <th>Destination Arrival Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="flights in departing">
+                                <td>{{flights.ident}}</td>
+                                <td>{{flights.originCity}}</td>
+                                <td>{{flights.estimatedarrivaltime * 1000| date:'short'}}</td>
+                                <td>{{flights.filed_departuretime * 1000| date:'short'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+            <div class="flightinfo">
+
+            </div>
+
+
+        </div> 
+    </div>
+</div>

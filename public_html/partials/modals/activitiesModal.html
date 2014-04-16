@@ -1,0 +1,61 @@
+ 
+<div class="modal-body activityModal" >
+
+    <div class="metroHeaderDynamic">
+        {{siteTarget.title}}
+    </div>
+
+
+    <div ng-switch on="modalPivot">
+
+
+        <div ng-switch-default>
+            <ul rn-carousel class="mobileCarousel">
+                <li ng-repeat="image in siteTarget.gallery" >
+                    <div class="layer"><img ng-src="{{image.url_large}}"></div>
+                </li>
+            </ul> 
+            <h3>Social Ratings</h3> 
+            <div>
+                Rating:{{placeRating}} <rating value="placeRating" max="10" ></rating><br>
+                Ranked: {{siteTarget.socialrankings[0].rank|number}} of {{siteTarget.socialrankings[0].total|number }}<br>
+                {{siteTarget.totalwerehere|number}} were here
+
+            </div>
+            <div class="btn btn-large btn-success" ng-click="goDirections()"> 
+                This is directions
+            </div>
+        </div>
+        <div ng-switch-when="directions">
+            <div class="container-fluid">
+                <div class="span6">
+                    <div id="directions">
+
+                    </div>
+                </div>
+                <div class="span6 mapRight">
+                    <div id='maps'>      </div>
+                    <p>Take your directions to go, with your mobile phone</p>
+                    <p>Enter your email</p>
+                    <input ng-show='!mailSent' type="text" id='userEmail' placeholder="email@example.com" ng-model='userEmail'>
+                    <button ng-show='userEmail' ng-hide='mailSent' ng-click="sendTheMail()" class="btn btn-large btn-success" >Send Email</button>
+                    <p ng-show='mailSent' class='emailConfirm'>Check your Email</p>
+
+
+                    <h3>Or</h3>
+
+
+                    <iframe sandbox="allow-forms allow-scripts"
+                            ng-src="http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl={{qrcode}}" >
+                    </iframe>
+
+                    <p>Scan the QR Code</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

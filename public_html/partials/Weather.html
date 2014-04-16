@@ -1,0 +1,47 @@
+<div class="container-fluid" ng-controller="weatherCTRL">
+    <div class="row-fluid">
+        <div class="span12">
+
+            <div class="metroHeader">
+                Weather
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="activitiesMarketing" class="marketing">
+            </div>
+            <hr class="separator">
+
+            <div class="weathercontainer"> 
+                <div ng-repeat="day in forecasts" class="forcast">
+                    <div>
+                        <img ng-src="img/weatherIcons/{{day.icon_url|iconName }}" alt="hey this is an alt">
+                    </div>
+
+                    <div>
+                        {{  day.currentTemperature | number:0 }} &deg;	
+                    </div>
+
+                    <div>
+                        <h3>High</h3>
+                        <h3>{{day.high.fahrenheit | number:0 }} &deg;</h3>
+
+                    </div>
+                    <div></div>
+                    <div>
+                        <h3>Low</h3>
+                        <h3>{{day.low.fahrenheit | number:0 }} &deg;</h3>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div> 
+    </div>
+</div>

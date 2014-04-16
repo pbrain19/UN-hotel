@@ -1,0 +1,49 @@
+<div id="diningpartial" class="container-fluid" ng-controller="dinningCTRL">
+    <div class="row-fluid">
+        <div class="span12">
+
+            <div class="metroHeader">
+                Dining
+            </div>
+        </div> 
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+
+
+            <div id="dinningMarketing" class="marketing">
+            </div>
+            <hr class="separator">
+
+            <div class="filterSearch">
+                <input id="inputfilter" placeholder="Search for Food..."  ng-model="diningFilter">
+
+            </div> 
+            <img class = "keyboardClose" src ="img/CloseKeyboard.png" alt="">
+            <div id="virtualKeyboard"></div>
+            <h1 align="center">Browse By Your Taste</h1>
+            <div  class="filtersHolder"> 
+
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'American'">American</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'Steak'">Steak</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'Deli'">Deli</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'japanese'">Japanese</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'Italian'">Italian</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'Chinese'">Chinese</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="'Mexican'">Mexican</div>
+                <div class=" metroFilters " ng-model="diningFilter" btn-radio="''">All</div> 
+
+            </div>
+            <div class="metrovenues">
+                <div ng-click="open(item)" ng-repeat="item in items| filter:diningFilter" ng-animate="{enter:'animated rollIn', leave:' animated rollOut'}" >
+                    <img ng-src="{{item.imageurl}}" ng-alt="{{item.title}}">
+                    <p>{{item.title}}</p>
+
+                </div> 
+
+            </div>
+
+        </div> 
+    </div>
+</div>

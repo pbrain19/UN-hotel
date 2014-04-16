@@ -1,0 +1,47 @@
+<div class="container-fluid" ng-controller="activitiesCTRL">
+    <div class="row-fluid">
+        <div class="span12">
+
+            <div class="metroHeader">
+                Activities
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12">
+            <div id="activitiesMarketing" class="marketing">
+            </div>
+            <hr class="separator">
+            <div class="filterSearch">
+                <input placeholder="Search for Food..." id="activitysearch" ng-model="activitiesFilter">
+            </div> 
+
+            <img class = "keyboardClose" src ="img/CloseKeyboard.png" alt="">
+            <div id="virtualKeyboard"></div>
+            <h1 align="center">Browse By Your Taste</h1>
+            <div  class="filtersHolder"> 
+
+                <div class=" metroFilters " ng-model="activitiesFilter" btn-radio="'Comedy'">Comedy</div>
+                <div class=" metroFilters " ng-model="activitiesFilter" btn-radio="'Marina'">Sea/Ocean</div>
+                <div class=" metroFilters " ng-model="activitiesFilter" btn-radio="'theater'">Theater</div>
+                <div class=" metroFilters " ng-model="activitiesFilter" btn-radio="'lookout'">City Sights</div>
+                <div class=" metroFilters " ng-model="activitiesFilter" btn-radio="'Landmark'">Landmark</div> 
+                <div class=" metroFilters " ng-model="activitiesFilter" btn-radio="''">All</div> 
+
+            </div>
+            
+            <div class="metrovenues" >
+                <div ng-click="open(item)" ng-repeat="item in items | filter:activitiesFilter" ng-animate="{enter:'animated rollIn', leave:' animated rollOut'}" >
+                    <img ng-src="{{item.imageurl}}" ng-alt="{{item.title}}">
+                    <p>{{item.title}}</p>
+                    
+                </div> 
+
+            </div>
+
+        </div> 
+    </div>
+</div>
